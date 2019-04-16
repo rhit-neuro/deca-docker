@@ -27,6 +27,7 @@ RUN \
   wget https://dl.bintray.com/sbt/debian/sbt-1.2.8.deb && \
   dpkg --install sbt-1.2.8.deb && \
   rm -f sbt-1.2.8.deb && \
+  # Create a "rose" user with password "Docker!"
   useradd -ms /bin/bash rose && \
   usermod -aG sudo rose && \
   echo "rose:Docker!" | chpasswd

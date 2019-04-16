@@ -15,11 +15,12 @@ Start your container for the first time with:
 # <parallel-neuro-simulation repo location> is where you cloned the parallel-neuro-simulation repo
 docker run -it -v <parallel-neuro-simulation repo location>:/project --name nsenv docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/neuro-simulation-env:latest bash
 ```
+* `-it` - creates an interactive terminal for you to type commands into.
 * `--name nsenv` - names this container `nsenv`.
 * `-v <parallel-neuro-simulation repo location>:/project` - mounts `<parallel-neuro-simulation repo location>` on your host computer to `/project` in this container.
 
-## Running susequent times
-See [`README.md`](../README.md) in this directory's parent directory.
+## Running subsequent times
+See [`README.md`](../README.md#running-containers-subsequent-times) in this directory's parent directory.
 
 ## Building
 To build this image, run the following command:

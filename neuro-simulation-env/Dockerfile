@@ -23,6 +23,7 @@ RUN \
   htop \
   sudo && \
   rm -rf /var/lib/apt/lists/* && \
+  # Create a "rose" user with password "Docker!"
   useradd -ms /bin/bash rose && \
   usermod -aG sudo rose && \
   echo "rose:Docker!" | chpasswd

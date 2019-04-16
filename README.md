@@ -2,9 +2,11 @@ Dockerfiles
 =========
 
 There are currently three docker images we use:
-* [neuro-simulation-env](neuro-simulation-env/)
-* [riscv-poky-build](riscv-poky-build/)
 * [rocket-chip-env](rocket-chip-env/)
+* [neuro-simulation-env](neuro-simulation-env/)
+* [firesim-software-env](firesim-software-env/)
+
+Note: Each of these images has a default non-root user `rose` with password `Docker!`. The `rose` user is also in the `sudo` group.
 
 ## Setting up Docker
 First, you'll want to install docker:
@@ -17,7 +19,7 @@ sudo groupadd docker
 # replace <username> with your computer username below
 sudo usermod -aG docker <username>
 ```
-Now logout and log back in for your group membership to be re-evaluated. Now you can start up the docker daemon with:
+Now logout of your computer and log back in for your group membership to be re-evaluated. Now you can start up the docker daemon with:
 ```bash
 sudo systemctl start docker
 ```
@@ -26,8 +28,22 @@ docker can be stopped similarly with:
 sudo systemctl stop docker
 ```
 
+After restarting your computer, you may need to start the docker daemon again.
+
+### Make sure your docker's networking is working
+Sometimes when installing docker on Ubuntu, you won't be able to properly resolve hostnames within a container. Perform the following to see if docker's networking is working for you:
+```bash
+docker pull ubuntu:artful
+docker run -it --rm ubuntu:artful bash
+getent hosts google.com
+```
+If the above `getent` command prints an IP address, then docker's networking is working properly for you. If instead you get an error,
+
+https://serverfault.com/a/791971
+
+
 ## Using Docker
-We recommend you complete at least the first two parts of the official [Get Started](https://docs.docker.com/get-started/) tutorial to familiarize yourself with docker.
+We recommend you complete at least the first part of the official [Get Started](https://docs.docker.com/get-started/) tutorial to familiarize yourself with docker.
 
 ### Docker Registry Info
 We have a docker registry integrated into this repository on `ada` and one hosted publicly on [Docker Hub](https://hub.docker.com/r/rhneuroprocessor/). The public registry isn't being used anymore for two main reasons:
@@ -58,12 +74,12 @@ docker push docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/<image 
 ### Running a container for the first time
 See this directory's sub-directories for specific instructions for each image on running containers for the first time.
 
-### Running container's subsequent times
+### Running containers subsequent times
 Once you've created a container, you can start it with:
 ```bash
 docker start <container name>
 ```
-To open start a shell in a running container, run:
+To start a shell in a running container, run:
 ```bash
 docker exec -it <container name> bash
 ```
@@ -95,13 +111,13 @@ docker container ls -a
 #### Deleting contianers and images
 If you want to delete a container, run:
 ```bash
-# Replace containerName with the name of the container to delete
-docker rm containerName
+# Replace <container name> with the name of the container to delete
+docker rm <container name>
 ```
 If you want to delete an image, you first have to delete all containers that use that image and then run:
 ```bash
-# Replace imageName with the name of the container to delete
-docker image rm imageName
+# Replace <image name> with the name of the image to delete
+docker image rm <image name>
 ```
 
 ## Making New Images
