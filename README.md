@@ -37,10 +37,12 @@ docker pull ubuntu:artful
 docker run -it --rm ubuntu:artful bash
 getent hosts google.com
 ```
-If the above `getent` command prints an IP address, then docker's networking is working properly for you. If instead you get an error,
+If the above `getent` command prints an IP address, then docker's networking is working properly for you. If instead you get an error, follow these steps and then perform the above test again:
+* Edit `/etc/NetworkManager/NetworManager.conf` and comment out the line `dns=dnsmasq`
+* `sudo service network-manager restart`
+* `sudo service docker restart`
 
-https://serverfault.com/a/791971
-
+This solution was found at https://serverfault.com/a/791971.
 
 ## Using Docker
 We recommend you complete at least the first part of the official [Get Started](https://docs.docker.com/get-started/) tutorial to familiarize yourself with docker.
