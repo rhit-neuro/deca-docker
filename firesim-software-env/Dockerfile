@@ -1,4 +1,4 @@
-# Dockerfile for tag docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/buildroot-env:1.0.0
+# Dockerfile for tag docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/firesim-software-env:1.0.0
 # Contains dependencies required for building linux with buildroot
 FROM docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-env:1.0.0
 
@@ -25,6 +25,7 @@ RUN /usr/share/debconf/fix_db.pl && \
   && \
   rm -rf /var/lib/apt/lists/* && \
   locale-gen en_US.UTF-8 && \
+  # Create a "rose" user with password "Docker!"
   useradd -ms /bin/bash rose && \
   usermod -aG sudo rose && \
   echo "rose:Docker!" | chpasswd

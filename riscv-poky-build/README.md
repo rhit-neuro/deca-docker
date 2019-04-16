@@ -1,5 +1,8 @@
 # riscv-poky-build
 
+## DEPRECATED
+We don't use or maintain this docker image anymore. If you want to build Linux for [`deca`](https://ada.csse.rose-hulman.edu/neuroprocessor-group/deca), see [`firesim-software-env`](../firesim-software-env/) instead.
+
 ## Features
 This is the Docker image for building `riscv-poky`.
 It takes significant amount of space to build and run the image. Building the
@@ -53,8 +56,8 @@ ROOTFS: /riscv-poky/build/tmp/deploy/images/riscv64/core-image-riscv-riscv64-<bu
 BBL: /riscv-poky/build/tmp/work/riscv64-poky-linux/riscv-pk/1.0-r0/build/bbl
 ```
 
-## Running susequent times
-See [`README.md`](../README.md) in this directory's parent directory.
+## Running subsequent times
+See [`README.md`](../README.md#running-containers-subsequent-times) in this directory's parent directory.
 
 ## Building
 To build this image, run the following command:
