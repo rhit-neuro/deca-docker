@@ -8,7 +8,7 @@ Download this docker image with:
 ```bash
 docker pull docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env
 ```
-Now `cd` into the directory with the Rocket Chip project you're working on (probably `deca/`). For example, if you're using the [`deca`](https://ada.csse.rose-hulman.edu/neuroprocessor-group/deca) repository as the base for your project, `cd` into the `deca` directory. Now, to create a new docker container from this docker image, run:
+Now `cd` into the directory with the Rocket Chip project you're working on (probably `deca/`). For example, if you're using the [`deca`](https://github.com/rhit-neuro/deca) repository as the base for your project, `cd` into the `deca` directory. Now, to create a new docker container from this docker image, run:
 ```bash
 docker run -it --name rcenv -v $(pwd):/project -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env
 ```

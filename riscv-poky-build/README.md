@@ -1,7 +1,7 @@
 # riscv-poky-build
 
 ## DEPRECATED
-We don't use or maintain this docker image anymore. If you want to build Linux for [`deca`](https://ada.csse.rose-hulman.edu/neuroprocessor-group/deca), see [`firesim-software-env`](../firesim-software-env/) instead.
+We don't use or maintain this docker image anymore. If you want to build Linux for [`deca`](https://github.com/rhit-neuro/deca), see [`firesim-software-env`](../firesim-software-env/) instead.
 
 ## Features
 This is the Docker image for building `riscv-poky`.
