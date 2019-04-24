@@ -118,7 +118,7 @@ We use specific versions in `.gitlab-ci.yml` to prevent mistakes like forgetting
 #### Versioning while developing a new image
 While developing a new docker image, you should take a slightly different approach to version numbering. Let's look at an example to see a good way to handle versioning.
 
-Let's say `neuro-simulation-env` is currently at version `2.3.1` and we want to add a new primary dependency which would bump our verision number to `3.0.0`. While you are experimenting with building this new image, start with version number `3.0.0_dev01`. If the changes you tried didn't actually work, then you just need to bump the dev number (`3.0.0_dev02`) for your next attept at building your new image. Once you get a dev image to work, you can change its version number to your target version number of `3.0.0`.
+Let's say `neuro-simulation-env` is currently at version `2.3.1` and we want to add a new primary dependency which would bump our verision number to `3.0.0`. While you are experimenting with building this new image, start with version number `3.0.0_dev01`. If the changes you tried didn't actually work, then you just need to bump the dev number (`3.0.0_dev02`) for your next attempt at building your new image. Once you get a dev image to work, you can change its version number to your target version number of `3.0.0`.
 
 #### Tagging images
 Tagging is the way you associate a version number with a docker image. You can change the version or tag of a docker image with the following:
