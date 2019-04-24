@@ -23,12 +23,17 @@ Now logout of your computer and log back in for your group membership to be re-e
 ```bash
 sudo systemctl start docker
 ```
-docker can be stopped similarly with:
+
+Test your installation of Docker by running:
+```bash
+docker run hello-world
+```
+
+You don't need to stop Docker now, but you can with:
 ```bash
 sudo systemctl stop docker
 ```
-
-After restarting your computer, you may need to start the docker daemon again.
+Don't restart your computer now, but in general after restarting your computer, you may need to start the docker daemon again.
 
 ### Make sure your docker's networking is working
 Sometimes when installing docker on Ubuntu, you won't be able to properly resolve hostnames within a container. Perform the following to see if docker's networking is working for you:
@@ -86,7 +91,7 @@ If you want to see all your containers, run:
 ```docker
 docker container ls -a
 ```
-#### Deleting contianers and images
+#### Deleting containers and images
 If you want to delete a container, run:
 ```bash
 # Replace <container name> with the name of the container to delete
