@@ -11,7 +11,7 @@ Note: Each of these images has a default non-root user `rose` with password `Doc
 ## Setting up Docker
 First, you'll want to install docker:
 ```bash
-sudo apt install docker
+sudo apt install docker.io
 ```
 Now you need to add your user to the `docker` group so that you don't need to be root to run docker commands:
 ```bash
