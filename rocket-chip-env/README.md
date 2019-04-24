@@ -4,6 +4,8 @@
 The `rocket-chip-env` docker image has `riscv-tools` and `Xilinx Vivado` installed and is ready to build a `rocket-chip` from scratch targeting either the `verilator` or an actual FPGA. This image can also compile and run `Chisel` code.
 
 ## Running for the first time
+**Note**: This image is large (~8GB compressed, ~20GB extracted). It will take a while to download.
+
 Download this docker image with:
 ```bash
 docker pull rhitdeca/rocket-chip-env
