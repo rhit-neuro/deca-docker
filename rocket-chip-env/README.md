@@ -6,11 +6,11 @@ The `rocket-chip-env` docker image has `riscv-tools` and `Xilinx Vivado` install
 ## Running for the first time
 Download this docker image with:
 ```bash
-docker pull docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env
+docker pull rhitdeca/rocket-chip-env
 ```
 Now `cd` into the directory with the Rocket Chip project you're working on (probably `deca/`). For example, if you're using the [`deca`](https://github.com/rhit-neuro/deca) repository as the base for your project, `cd` into the `deca` directory. Now, to create a new docker container from this docker image, run:
 ```bash
-docker run -it --name rcenv -v $(pwd):/project -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env
+docker run -it --name rcenv -v $(pwd):/project -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY rhitdeca/rocket-chip-env
 ```
 * `-it` - creates an interactive terminal for you to type commands into.
 * `--name rcenv` - names this container `rcenv`.
@@ -26,7 +26,7 @@ You probably won't need to rebuild this image from scratch as you can just downl
 First, you'll need to download [Vivado 2016.2](https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz). This download requires you to create an account with Xilinx. Place the downloaded file (named `Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz`) in this directory and then run the following:
 ```bash
 # Make sure to replace <version> with your version number for the image you're building
-docker build . -t docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env:<version>
+docker build . -t rhitdeca/rocket-chip-env:<version>
 ```
 Note: this build will take some time and a large amount of disk space
 

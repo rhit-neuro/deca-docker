@@ -1,4 +1,4 @@
-# Dockerfile for tag docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-env:1.0.0
+# Dockerfile for tag rhitdeca/riscv-env:1.0.0
 FROM ubuntu:artful
 
 # Install dependencies

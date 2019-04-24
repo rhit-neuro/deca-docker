@@ -47,30 +47,12 @@ This solution was found at https://serverfault.com/a/791971.
 ## Using Docker
 We recommend you complete at least the first part of the official [Get Started](https://docs.docker.com/get-started/) tutorial to familiarize yourself with docker.
 
-### Docker Registry Info
-We have a docker registry integrated into this repository on `ada` and one hosted publicly on [Docker Hub](https://hub.docker.com/r/rhneuroprocessor/). The public registry isn't being used anymore for two main reasons:
-1. Since `ada` is on-campus, downloading large docker images from it on-campus won't contribute to your monitored bandwidth usage
-2. The public registry has one set of credentials for the team to share while each member has their own credentials for the `ada` hosted regisry.
-
-### Registry login
-If you want to use one of the docker images hosted in this repository's registry, you must first login:
-```bash
-# The username and password used here are for your account on ada.csse.rose-hulman.edu
-docker login docker.csse.rose-hulman.edu
-```
-note: you only need to login one time
-
 ### Download images
 To download a docker image:
 ```bash
 # replace <image name> with the name of the image you want to download
 # e.g. rocket-chip-env
-docker pull docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/<image name>:latest
-```
-### Upload images
-You can push built docker images to this repository's registry with the following:
-```bash
-docker push docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/<image name>:<image tag>
+docker pull rhitdeca/<image name>:latest
 ```
 
 ### Running a container for the first time
@@ -88,12 +70,6 @@ docker exec -it <container name> bash
 To stop a running container:
 ```bash
 docker stop <container name>
-```
-
-### Tagging images
-Tagging is the way you associate a version number with a docker image. You can change the version or tag of a docker image with the following:
-```bash
-docker tag <image name>:<original tag> <image name>:<new tag>
 ```
 
 ### Managing your images and containers
@@ -138,3 +114,27 @@ We use specific versions in `.gitlab-ci.yml` to prevent mistakes like forgetting
 While developing a new docker image, you should take a slightly different approach to version numbering. Let's look at an example to see a good way to handle versioning.
 
 Let's say `neuro-simulation-env` is currently at version `2.3.1` and we want to add a new primary dependency which would bump our verision number to `3.0.0`. While you are experimenting with building this new image, start with version number `3.0.0_dev01`. If the changes you tried didn't actually work, then you just need to bump the dev number (`3.0.0_dev02`) for your next attept at building your new image. Once you get a dev image to work, you can change its version number to your target version number of `3.0.0`.
+
+#### Tagging images
+Tagging is the way you associate a version number with a docker image. You can change the version or tag of a docker image with the following:
+```bash
+docker tag <image name>:<original tag> <image name>:<new tag>
+```
+
+### Docker Registry Info
+We have a docker registry hosted publicly on [Docker Hub](https://hub.docker.com/u/rhitdeca).
+
+#### Registry login
+If you want to update one of the docker images hosted in this repository's registry, you must first login:
+```bash
+# The username and password used here are for your Docker Hub account
+docker login docker.io
+```
+note: you only need to login one time
+
+### Upload images
+After logging in, you can push built docker images to this repository's registry with the following:
+```bash
+docker push rhitdeca/<image name>:<image tag>
+```
+

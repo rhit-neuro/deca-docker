@@ -1,4 +1,4 @@
-# Dockerfile for tag docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/rocket-chip-env:1.1.0
+# Dockerfile for tag rhitdeca/rocket-chip-env:1.1.0
 FROM ubuntu:artful as install-vivado
 
 COPY install_config.txt /
@@ -7,7 +7,7 @@ ADD Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz /
 RUN /Xilinx_Vivado_SDK_2016.2_0605_1/xsetup --agree 3rdPartyEULA,WebTalkTerms,XilinxEULA --batch Install --config /install_config.txt
 
 
-FROM docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-env:1.0.0
+FROM rhitdeca/riscv-env:1.0.0
 
 # Copy Vivado files from first build stage
 COPY --from=install-vivado /opt/Xilinx /opt/Xilinx

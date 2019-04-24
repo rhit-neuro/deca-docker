@@ -1,5 +1,5 @@
-# Dockerfile for tag docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/neuro-simulation-env:2.2.1
-FROM docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-env:1.0.0
+# Dockerfile for tag rhitdeca/neuro-simulation-env:2.2.1
+FROM rhitdeca/riscv-env:1.0.0
 
 # Install dependencies
 RUN \

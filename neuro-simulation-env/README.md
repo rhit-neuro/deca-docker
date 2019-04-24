@@ -7,13 +7,13 @@ It has the toolchain for x86_64 and riscv64 built and ready to use.
 ## Running for the first time
 Download this docker image with:
 ```bash
-docker pull docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/neuro-simulation-env
+docker pull rhitdeca/neuro-simulation-env
 ```
 
 Start your container for the first time with:
 ```bash
 # <parallel-neuro-simulation repo location> is where you cloned the parallel-neuro-simulation repo
-docker run -it -v <parallel-neuro-simulation repo location>:/project --name nsenv docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/neuro-simulation-env:latest bash
+docker run -it -v <parallel-neuro-simulation repo location>:/project --name nsenv rhitdeca/neuro-simulation-env:latest bash
 ```
 * `-it` - creates an interactive terminal for you to type commands into.
 * `--name nsenv` - names this container `nsenv`.
@@ -27,5 +27,5 @@ To build this image, run the following command:
 ```bash
 # cd into this folder first
 # Make sure to replace <version> with your version number for the image you're building
-docker build . -t docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/neuro-simulation-env:<version>
+docker build . -t rhitdeca/neuro-simulation-env:<version>
 ```

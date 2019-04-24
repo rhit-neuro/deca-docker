@@ -21,12 +21,12 @@ git checkout neurosim
 ```
 Then you must download this docker image with:
 ```bash
-docker pull docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-poky-build
+docker pull rhitdeca/riscv-poky-build
 ```
 Start your container for the first time with:
 ```bash
 # <riscv-poky repo location> is where you cloned the riscv-poky repo
-docker run -it -v <riscv-poky repo location>:/riscv-poky --name build-poky docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-poky-build:latest bash
+docker run -it -v <riscv-poky repo location>:/riscv-poky --name build-poky rhitdeca/riscv-poky-build:latest bash
 ```
 * `--name build-poky` - names this container `build-poky`.
 * `-v <riscv-poky repo location>:/riscv-poky` - mounts `<riscv-poky repo location>` on your host computer to `/riscv-poky` in this container.
@@ -64,5 +64,5 @@ To build this image, run the following command:
 ```bash
 # cd into this folder first
 # Make sure to replace <version> with your version number for the image you're building
-docker build . -t docker.csse.rose-hulman.edu/neuroprocessor-group/deca-docker/riscv-poky-build:<version>
+docker build . -t rhitdeca/riscv-poky-build:<version>
 ```
