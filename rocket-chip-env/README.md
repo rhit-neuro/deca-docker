@@ -23,7 +23,7 @@ docker run -it --name rcenv -v $(pwd):/project -v /tmp/.X11-unix:/tmp/.X11-unix 
 See [`README.md`](../README.md#running-containers-subsequent-times) in this directory's parent directory.
 
 ## Building
-You probably won't need to rebuild this image from scratch as you can just download a prebuilt image from this repo's docker registry. If you do rebuild this image, you'll need around 60 GB of free space on your computer.
+You probably won't need to rebuild this image from scratch as you can just download a prebuilt image from this repo's docker registry. If you do rebuild this image, you'll need around 75 GB of free space on your computer.
 
 First, you'll need to download [Vivado 2016.2](https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz). This download requires you to create an account with Xilinx. Place the downloaded file (named `Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz`) in this directory and then run the following:
 ```bash

@@ -1,4 +1,4 @@
-# Dockerfile for tag rhitdeca/rocket-chip-env:1.1.0
+# Dockerfile for tag rhitdeca/rocket-chip-env:1.1.1
 FROM ubuntu:artful as install-vivado
 
 COPY install_config.txt /
@@ -45,5 +45,7 @@ VOLUME /project
 WORKDIR /project
 
 USER rose
+
+RUN unset LD_LIBRARY_PATH
 
 CMD bash
