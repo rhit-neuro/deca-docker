@@ -1,5 +1,5 @@
-# Dockerfile for tag rhitdeca/neuro-simulation-env:2.2.1
-FROM rhitdeca/riscv-env:1.0.0
+# Dockerfile for tag rhitdeca/neuro-simulation-env:3.0.0
+FROM rhitdeca/riscv-env:2.0.0
 
 # Install dependencies
 RUN \
@@ -9,14 +9,14 @@ RUN \
   # autoconf \
   # automake \
   # curl \
-  g++=4:7.2.0-1ubuntu1 \
+  g++=4:7.4.0-1ubuntu2.3 \
   # libtool \
   # make \
   unzip \
   # Boost library with riscv-gcc dependencies
 #  python-dev \
   # Project dependencies
-  gcc=4:7.2.0-1ubuntu1 \
+  gcc=4:7.4.0-1ubuntu2.3 \
   # Build dependencies
   cmake \
   # Utilities
