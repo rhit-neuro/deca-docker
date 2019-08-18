@@ -1,6 +1,6 @@
-# Dockerfile for tag rhitdeca/firesim-software-env:1.0.0
+# Dockerfile for tag rhitdeca/firesim-software-env:2.0.0
 # Contains dependencies required for building linux with buildroot
-FROM rhitdeca/riscv-env:1.0.0
+FROM rhitdeca/riscv-env:2.0.0
 
 # ENV LANG=en_US.UTF-8
 # ENV LC_ALL=en_US.UTF-8

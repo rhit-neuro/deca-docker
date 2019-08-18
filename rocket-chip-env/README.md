@@ -25,6 +25,23 @@ See [`README.md`](../README.md#running-containers-subsequent-times) in this dire
 ## Building
 You probably won't need to rebuild this image from scratch as you can just download a prebuilt image from this repo's docker registry. If you do rebuild this image, you'll need around 75 GB of free space on your computer.
 
+> **_Tip:_** If you don't have much room on your main drive, you can temporarily configure docker to run on an external drive to build this image. The following assumes your external drive is mounted at `/mnt/my-drive`:
+>
+> 1. `sudo systemctl stop docker`
+> 2. `mkdir /mnt/my-drive/docker-base`
+> 3. Create a `/etc/docker/daemon.json` file with the following contents:
+>    ```
+>    {
+>        "graph": "/mnt/my-drive/docker-base"
+>    }
+>    ```
+> 4. `sudo systemctl start docker`
+> 5. Build and push your docker image to dockerhub
+> 6. `sudo systemctl stop docker`
+> 7. `sudo rm /etc/docker/daemon.json`
+> 8. `sudo systemctl start docker`
+> 9. Pull your image from dockerhub
+
 First, you'll need to download [Vivado 2016.2](https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz). This download requires you to create an account with Xilinx. Place the downloaded file (named `Xilinx_Vivado_SDK_2016.2_0605_1.tar.gz`) in this directory and then run the following:
 ```bash
 # Make sure to replace <version> with your version number for the image you're building
