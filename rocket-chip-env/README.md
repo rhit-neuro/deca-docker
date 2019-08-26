@@ -23,7 +23,7 @@ docker run -it --name rcenv -v $(pwd):/project -v /tmp/.X11-unix:/tmp/.X11-unix 
 See [`README.md`](../README.md#running-containers-subsequent-times) in this directory's parent directory.
 
 ## Building
-You probably won't need to rebuild this image from scratch as you can just download a prebuilt image from this repo's docker registry. If you do rebuild this image, you'll need around 75 GB of free space on your computer.
+You probably won't need to rebuild this image from scratch as you can just download a prebuilt image from this repo's docker registry. If you do rebuild this image, you'll need around 80 GB of free space on your computer.
 
 > **_Tip:_** If you don't have much room on your main drive, you can temporarily configure docker to run on an external drive to build this image. The following assumes your external drive is mounted at `/mnt/my-drive`:
 >
