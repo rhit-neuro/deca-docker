@@ -17,7 +17,7 @@ RUN \
   apt-get update && \
   apt-get install -y \
   cpio \
-  default-jdk \
+  openjdk-8-jdk \
   lib32ncurses5 \
   lib32z1 \
   sudo \
