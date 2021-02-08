@@ -1,9 +1,10 @@
 Dockerfiles
 =========
 
-There are currently three docker images we use:
+There are currently four docker images we use:
 * [rocket-chip-env](rocket-chip-env/)
 * [neuro-simulation-env](neuro-simulation-env/)
+* [cuda-neuro-simulation-env](cuda-neuro-simulation-env/)
 * [firesim-software-env](firesim-software-env/)
 
 Note: Each of these images has a default non-root user `rose` with password `Docker!`. The `rose` user is also in the `sudo` group.

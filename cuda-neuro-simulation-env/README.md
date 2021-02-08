@@ -2,11 +2,9 @@
 
 ## Features
 
-This is the environment that you want to develop the code with.
+This is the environment that you want to develop the code with. It has the toolchains for x86_64, riscv64, and CUDA 10.2 built and ready to use.
 
-It has the toolchains for `x86_64`, `riscv64`, and `CUDA 10.2` built and ready to use.
-
-If you are not developing with CUDA, consider using regular `neuro-simulation-env` instead. It is a smaller image that does not contain the CUDA toolchain.
+If you are not developing with CUDA, consider using the regular [neuro-simulation-env](../neuro-simulation-env/) instead. It is a much smaller image that does not contain the CUDA toolchain, but can still compile the CPU simulation.
 
 ## Running for the first time
 
