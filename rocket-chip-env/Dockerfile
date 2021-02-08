@@ -41,10 +41,22 @@ RUN cd /opt/Xilinx/Vivado/2016.2/lib/lnx64.o && \
     ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6  libstdc++.so.6 && \
     unset LD_LIBRARY_PATH
 
+USER rose
+
+# Download, patch, and install hardfloat
+COPY hardfloat.patch $HOME
+
+RUN \
+  cd $HOME && \
+  git clone https://github.com/ucb-bar/berkeley-hardfloat.git && \
+  cd berkeley-hardfloat && \
+  git checkout f36127349c5303e32dcc97ccdd3b491f51ec60e9 && \
+  git apply $TOP/hardfloat.patch && \
+  sbt publishLocal && \
+  rm -f $HOME/hardfloat.patch
+
 VOLUME /project
 WORKDIR /project
-
-USER rose
 
 RUN unset LD_LIBRARY_PATH
 
