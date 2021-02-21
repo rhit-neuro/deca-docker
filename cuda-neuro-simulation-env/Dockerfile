@@ -1,4 +1,4 @@
-# Dockerfile for tag rhitdeca/cuda-neuro-simulation-env:1.0.0
+# Dockerfile for tag rhitdeca/cuda-neuro-simulation-env:1.1.0
 FROM rhitdeca/neuro-simulation-env:3.0.1
 
 USER root
@@ -53,6 +53,12 @@ RUN \
   echo "export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}" >> /home/rose/.bashrc && \
   echo "complete -W \"\\\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\\\`\" make" >> /home/rose/.bashrc && \
   touch /home/rose/.sudo_as_admin_successful
+
+# Update Boost to 1.65.1 for CUDA
+RUN \
+  rm -rf /usr/local/include/boost/* && \
+  echo "PS1=\"\\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ \"" >> /home/rose/.bashrc
+ADD boost_1_65_1.tar.gz /usr/local/include/boost/
 
 VOLUME /project
 WORKDIR /project
