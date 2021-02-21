@@ -1,8 +1,9 @@
 # neuro-simulation-env
 
 ## Features
-This is the environment that you want to develop the code with.
-It has the toolchain for x86_64 and riscv64 built and ready to use.
+This is the environment that you want to develop the code with. It has the toolchains for x86_64 and riscv64 built and ready to use.
+
+If you are working on the CUDA implementation of the simulation, use [cuda-neuro-simulation-env](../cuda-neuro-simulation-env/) instead. It is a much larger image, but contains all dependencies required for compiling the existing codebase with CUDA.
 
 ## Running for the first time
 Download this docker image with:
